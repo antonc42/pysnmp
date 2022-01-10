@@ -41,7 +41,7 @@ try:
 except ImportError:
     import trollius as asyncio
 
-IS_PYTHON_344_PLUS = platform.python_version_tuple() >= ('3', '4', '4')
+IS_PYTHON_344_PLUS = [int(v) for v in platform.python_version_tuple()] >= [3, 4, 4]
 
 class AsyncioDispatcher(AbstractTransportDispatcher):
     """AsyncioDispatcher based on asyncio event loop"""
